@@ -30,7 +30,10 @@ export default async function Home() {
   const items = await getItems()
   return (
     <main className={styles.main}>
-     {items.map((item) => (
+
+      
+
+     {items.map((item: any) => (
         <div key={item.slug}>
           <h1>{item.name}</h1>
           <Image src={item.image} alt={item._id} width={200} height={200} />
