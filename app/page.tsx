@@ -24,6 +24,7 @@ function getItems() {
       content,
     }
   `)
+  {cache: 'no-store'}
 }
 
 export default async function Home() {
