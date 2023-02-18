@@ -4,6 +4,8 @@ import styles from './page.module.css'
 import { createClient, groq } from 'next-sanity'
 import { PortableText } from '@portabletext/react'
 
+export const revalidate = 1
+
 const inter = Inter({ subsets: ['latin'] })
 
 const clientConfig = {
@@ -30,10 +32,7 @@ export default async function Home() {
   const items = await getItems()
   return (
     <main className={styles.main}>
-
-      
-
-     {items.map((item: any) => (
+      {items.map((item: any) => (
         <div key={item.slug}>
           <h1>{item.name}</h1>
           <Image src={item.image} alt={item._id} width={200} height={200} />
@@ -43,3 +42,4 @@ export default async function Home() {
     </main> 
   )
 }
+
